@@ -1,0 +1,625 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>AlFolio - Portfolio Web</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+  <!-- Template css Files -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+  <link rel="stylesheet" href="{% static 'css/skins/blue.css' %}" type="text/css">
+
+  <!-- Live Style Switcher -->
+  <link rel="stylesheet" class="alternate-style" title="blue" href="{% static 'css/skins/blue.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="pink" href="{% static 'css/skins/pink.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="orange" href="{% static 'css/skins/orange.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="yellow" href="{% static 'css/skins/yellow.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="green" href="{% static 'css/skins/green.css' %}" type="text/css" disabled>
+  <link rel="stylesheet" href="{% static 'css/styleSwitcher.css' %}" type="text/css">
+
+</head>
+
+<body class="dark">
+
+  <!-- Pre Loader -->
+  <div class="preloader">
+    <div class="loader">
+    </div>
+  </div>
+  <!-- Pre Loader End -->
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Aside -->
+    <div class="aside">
+      <!-- Nav Toggler Btn -->
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <div class="aside-inner">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#home ">AI</a>
+        </div>
+
+        <!-- Nav -->
+        <ul class="nav">
+          <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
+          <li><a href="#services"><i class="fa fa-list"></i> Services</a></li>
+          <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Demo</a></li>
+          <li><a href="#blog"><i class="fa fa-envelope"></i> Paper</a></li>
+          <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
+        </ul>
+        <!-- Copyright -->
+        <div class="copyright">
+          
+        </div>
+      </div>
+    </div>
+    <!-- Aside End-->
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- Home Section -->
+      <section class="home section active" id="home">
+        <div class="container">
+          <div class="intro">
+            <img src="{% static 'images/profile.png' %}" alt="profile" class="shadow-dark">
+            <h1>PLB 6</h1>
+            <p>Deepvoice detection</p>
+            <div class="social-links">
+              <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://github.com/" target="_blank"><i class="fa fa-github"></i></a>
+              <a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="https://linkedin.com/in/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Home section End -->
+
+      <!-- About Section -->
+      <section class="about section" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>About Web</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="about-content padd-15">
+              <div class="row">
+                <div class="about-text padd-15">
+                  <h2>AI voice <span>detection</span></h2>
+                  <p>Writing.....</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="personal-info padd-15">
+                  <div class="row">
+                    <div class="info-item padd-15">
+                      <p>Release : <span>1th January ****</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Model : <span>CNN</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Website : <span>****</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Email : <span>*****@gmail.com</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Framework : <span>***</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Phone : <span>******</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      <p>Dataset : <span>ASV2019_LA</span></p>
+                    </div>
+                    <div class="info-item padd-15">
+                      {% comment %} <p>Freelance : <span>Available</span></p> {% endcomment %}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="buttons padd-15">
+                      {% comment %} <a href="pdf/resume.pdf" target="_target" class="btn">Download CV</a>
+                      <a href="https://www.fiverr.com/alsiamworld" target="_blank" data-section-index="0"
+                        class="btn hire-me">Hire Me</a> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+                <div class="skills padd-15">
+                  <div class="row">
+                    <div class="skill-item padd-15">
+                      <h5>Research paper</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 80%"></div>
+                        <div class="skill-percent">80%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>Model training</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 20%"></div>
+                        <div class="skill-percent">20%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>Web Development</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 50%"></div>
+                        <div class="skill-percent">50%</div>
+                      </div>
+                    </div>
+                    <div class="skill-item padd-15">
+                      <h5>Data colection</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 70%"></div>
+                        <div class="skill-percent">70%</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="education padd-15">
+                  <h3 class="title">Process</h3>
+                  <div class="row">
+                    <div class="timeline-box padd-15">
+                      <div class="timeline shadow-dark">
+                        <!-- Timeline Item -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date">
+                            <i class="fa fa-calendar"></i> **** to Present
+                          </h6>
+                          <h4 class="timeline-title">Research</h4>
+                          <p class="timeline-text">.....</p>
+                        </div>
+                        <!-- Timeline Item end -->
+                        <!-- Timeline Item -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date">
+                            <i class="fa fa-calendar"></i> **** to Present
+                          </h6>
+                          <h4 class="timeline-title">Choose model, develope website</h4>
+                          <p class="timeline-text">......</p>
+                        </div>
+                        <!-- Timeline Item end -->
+                        <!-- Timeline Item -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date">
+                            <i class="fa fa-calendar"></i> **** to ****
+                          </h6>
+                          <h4 class="timeline-title">.....</h4>
+                          <p class="timeline-text">...... </p>
+                        </div>
+                        <!-- Timeline Item end -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="experience padd-15">
+                  <h3 class="title">Role</h3>
+                  <div class="row">
+                    <div class="timeline-box padd-15">
+                      <div class="timeline shadow-dark">
+                        <!-- Timeline Item -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date">
+                            <i class="fa fa-calendar"></i> **** to Present
+                          </h6>
+                          <h4 class="timeline-title">TruongNgoc</h4>
+                          <p class="timeline-text">Develope Website, Research</p>
+                        </div>
+                        <!-- Timeline Item end -->
+                        <!-- Timeline Item -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date">
+                            <i class="fa fa-calendar"></i> **** to Present
+                          </h6>
+                          <h4 class="timeline-title">NgocManh</h4>
+                          <p class="timeline-text">Research, Summarize, report </p>
+                        </div>
+                        <!-- Timeline Item end -->
+                        <!-- Timeline Item -->
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date">
+                            <i class="fa fa-calendar"></i> **** to Present
+                          </h6>
+                          <h4 class="timeline-title">LeeKayn</h4>
+                          <p class="timeline-text">Research, Model examination </p>
+                        </div>
+                        <!-- Timeline Item end -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- About Section End -->
+
+      <!-- Service Section  -->
+      <section class="service section" id="services">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Services</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Service Item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-paint-brush"></i></div>
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+            <!-- Service Item Ended -->
+            <!-- Service Item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-laptop"></i></div>
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+            <!-- Service Item Ended -->
+            <!-- Service Item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-wordpress"></i></div>
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+            <!-- Service Item Ended -->
+            <!-- Service Item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-code"></i></div>
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+            <!-- Service Item Ended -->
+            <!-- Service Item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-film"></i></div>
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+            <!-- Service Item Ended -->
+            <!-- Service Item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-rocket"></i></div>
+                <h4></h4>
+                <p></p>
+              </div>
+            </div>
+            <!-- Service Item Ended -->
+          </div>
+        </div>
+      </section>
+      <!-- Service Section Ended -->
+
+      <!-- Portfolio Section -->
+      <section class="portfolio section" id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Demo</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="portfolio-filter padd-15">
+             
+              <button type="button" class="active" data-filter="web-design">UPLOAD</button>
+              <button type="button" data-filter="photography">RESULT</button>
+            
+            </div>
+          </div>
+          <div class="row">
+            <!-- Portfolio Item -->
+            <div class="portfolio-item padd-15" data-category="web-design">
+              
+                  <!-- Input file ẩn để tải lên tệp âm thanh -->
+                  <input type="file" accept="audio/*" name="audio_file" id="audio-upload" style="display: none;">
+                  <!-- Nút tải lên âm thanh thay thế -->
+                  <button type="button" id="upload-button" ><i class="fa fa-upload"></i> Tải lên âm thanh</button>
+                  <div id="selected-file"  >Không có tệp nào được chọn.</div>
+                  <div class="button-play" ><button class="button-43" id="playButton">Play</button>
+                   <button class="button-43" id="pauseButton">Pause</button></div>
+                {% comment %} <div class="portfolio-info">
+                  <h4>Web Design</h4>
+                  <div class="icon"><i class="fa fa-search"></i></div>
+                </div> {% endcomment %}
+              </div>
+            </div>
+            <!-- Portfolio Item End-->
+            <!-- Portfolio Item -->
+            {% comment %} <div class="row">
+            <div class="portfolio-item padd-15" data-category="wordpress">
+              
+              <div class="evalute">
+              <button type="button" class="button-43" id="like-button"> Like </button>
+  
+                <button class="button-43" id="dislike-button">Dislike</button></div>
+            </div>
+          </div> {% endcomment %}
+            <!-- Portfolio Item End-->
+            <!-- Portfolio Item -->
+           
+            <!-- Portfolio Item End-->
+            <!-- Portfolio Item -->
+            <div class="row">
+            <div class="portfolio-item padd-15" data-category="photography">
+              <label class="lang-but" style="font-size: 18px; color: white; margin-right: 95px; ">
+                <input type="radio" name="language" value="vietnamese" id="lang_vi" checked> Vietnamese
+            </label>
+            <label class="lang-but" style="font-size: 18px; color: white;">
+                <input type="radio" name="language" value="english" id="lang_en" > English
+            </label>
+            <br><br>
+              
+                  <button type="button" class="button-43 "id="result-button"> Result </button>
+                  <div id="waveform-container" style="flex-grow: 1; display: none; z-index: 1; top: -50px;">
+                    <img id="image-result" src="" alt="Waveform" style="max-width: 100%; height: auto; margin-left: 60px; position: relative; top: -50px;">
+                    <form id="my-form">
+                      
+                      <!-- Các trường dữ liệu, input, ... -->
+                  </form>
+                    
+                  </div>
+                  <div style="display: flex;">
+                  <button type="button" class="button-43" id="like-button" style="display: none; flex-grow: 1; width: 48%; float: left; margin-right: 2%;"> Like </button>
+                    <button class="button-43" id="dislike-button" style="display: none; flex-grow: 1; width: 48%; float: right;">Dislike</button>
+                  </div>
+                
+                  
+            </div>
+            
+          </div>
+            <!-- Portfolio Item End-->
+            <!-- Portfolio Item -->
+           
+            <!-- Portfolio Item End-->
+            <!-- Portfolio Item -->
+            
+            <!-- Portfolio Item End-->
+
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio Section End -->
+
+      <!-- Blog Section -->
+      <section class="blog section" id="blog">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Latest Paper</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="{%static 'images/blog/rawgatst.png'%}" alt="blog">
+                  <div class="blog-date">
+                    23 Aug 2021
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <a href="https://arxiv.org/pdf/2107.12710.pdf" class="blog-title">End-to-End Spectro-Temporal Graph Attention Networks for
+                    Speaker Verification Anti-Spoofing and Speech Deepfake Detection</a>
+                  <p class="blog-description">Mô hình GAT (Graph Attention Network) là một loại mạng nơ-ron sử dụng trong lĩnh vực xử lý dữ liệu dạng đồ thị.mô hình tập trung vào các đặc trưng quan trọng hoặc các mối quan hệ quan trọng trong dữ liệu bằng cách tính toán trọng số cho từng phần tử dựa trên mối quan hệ của nó với các phần tử khác trong dữ liệu.</p>
+                  <p class="blog-tags">Tags : <a href="#">GNN</a> , <a href="#">GATST</a></p>
+
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="{%static 'images/blog/assist.png'%}" alt="blog">
+                  <div class="blog-date">
+                    4 Oct 2021
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <a href="https://arxiv.org/pdf/2110.01200v1.pdf" class="blog-title">AASIST: AUDIO ANTI-SPOOFING USING INTEGRATED SP</a>
+                  <p class="blog-description">Được phát triển thêm dựa vào nghiên cứu trước đó mô hình GATST</p>
+                  <p class="blog-tags">Tags : <a href="#">ASSIST</a> , <a href="#">GNN</a>, <a href="#">Rawnet2</a></p>
+
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="{%static 'images/blog/survey.png' %}" alt="blog">
+                  <div class="blog-date">
+                    49 Aug 2023
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <a href="https://arxiv.org/pdf/2308.14970.pdf" class="blog-title">Audio Deepfake Detection: A Survey
+                  </a>
+                  <p class="blog-description">Tổng hợp các nghiên cứu, so sánh độ chính xác, đưa ra thông tin tổng quát về deepfake voice</p>
+                  <p class="blog-tags">Tags : <a href="#">All</a> </p>
+
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+          </div>
+        </div>
+      </section>
+      <!-- Blog Section End -->
+
+      <!-- Contact Section -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Contact Me</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- contact-info-item -->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-map-marker"></i></div>
+              <h4>Address</h4>
+              <p>Your Address</p>
+            </div>
+            <!-- contact-info-item Ended -->
+            <!-- contact-info-item -->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-phone"></i></div>
+              <h4>Call Us On</h4>
+              <p>Your Number</p>
+            </div>
+            <!-- contact-info-item Ended -->
+            <!-- contact-info-item -->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class="fa fa-envelope"></i></div>
+              <h4>Email</h4>
+              <p>youremail@gmail.com</p>
+            </div>
+            <!-- contact-info-item Ended -->
+          </div>
+          <!-- Contact Form -->
+          <div class="row">
+            <form action=”mailto:alsiamworld@gmail.com” method=”POST” enctype=”multipart/form-data” name=”EmailForm”
+              class="contact-form padd-15">
+              <div class="row">
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name*">
+                  </div>
+                </div>
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email*">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Subject*">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Your Message*"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 padd-15">
+                  <button type="submit" class="btn">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Form Ended -->
+        </div>
+      </section>
+      <!-- Contact Section End -->
+
+    </div>
+    <!-- Main Content End -->
+
+  </div>
+  <!-- Main Container End-->
+
+  {% comment %} <!-- Lightbox  -->
+  <div class="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-close">&times;</div>
+      <img src="{%static 'images/portfolio/2.jpg' %}" class="lightbox-img" onclick="nextItem()" alt="">
+      <div class="lightbox-caption">
+        <div class="caption-text"></div>
+        <div class="caption-counter"></div>
+      </div>
+    </div>
+    <div class="lightbox-controls">
+      <div class="prev-item" onclick="prevItem()"><i class="fa fa-angle-left"></i></div>
+      <div class="next-item" onclick="nextItem()"><i class="fa fa-angle-right"></i></div>
+    </div>
+  </div>
+  <!-- Lightbox End --> {% endcomment %}
+
+  <!-- Live Style Switcher -->
+  <div class="style-switcher">
+    <div class="toggle-style-switcher">
+      <i class="fa fa-cog fa-spin"></i>
+    </div>
+    <h4>Style Switcher</h4>
+    <ul>
+      <li><a href="javascript:void(0);" title="blue" style="background-color: #2196f3;"
+          onclick="setActiveStyle('blue')"></a></li>
+      <li><a href="javascript:void(0);" title="pink" style="background-color: #ec1839;"
+          onclick="setActiveStyle('pink')"></a></li>
+      <li><a href="javascript:void(0);" title="orange" style="background-color: #fa5b0f;"
+          onclick="setActiveStyle('orange')"></a></li>
+      <li><a href="javascript:void(0);" title="yellow" style="background-color: #ffb400;"
+          onclick="setActiveStyle('yellow')"></a></li>
+      <li><a href="javascript:void(0);" title="green" style="background-color: #72b626;"
+          onclick="setActiveStyle('green')"></a></li>
+    </ul>
+    <h5>Body Screen</h5>
+    <label>
+      <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
+      Light
+    </label>
+    <label>
+      <input type="radio" class="body-skin" name="body-style" value="dark" >
+      Dark
+    </label>
+  </div>
+  <!-- Live Style Switcher End -->
+
+  <!-- Template Js -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <!-- Live Style Switcher JavaScript-->
+  <script src="{% static 'js/styleSwitcher.js' %}"></script>
+
+</body>
+
+</html>
