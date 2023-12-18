@@ -49,8 +49,8 @@
         <!-- Nav -->
         <ul class="nav">
           <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
-          <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
-          <li><a href="#services"><i class="fa fa-list"></i> Services</a></li>
+          {% comment %} <li><a href="#about"><i class="fa fa-user"></i> About</a></li> {% endcomment %}
+          {% comment %} <li><a href="#services"><i class="fa fa-list"></i> Services</a></li> {% endcomment %}
           <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Demo</a></li>
           <li><a href="#blog"><i class="fa fa-envelope"></i> Paper</a></li>
           <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
@@ -71,8 +71,8 @@
         <div class="container">
           <div class="intro">
             <img src="{% static 'images/profile.png' %}" alt="profile" class="shadow-dark">
-            <h1>PLB 6</h1>
-            <p>Deepvoice detection</p>
+            <h1>Xử Lí Dữ Liệu</h1>
+            <p>AI voice detection</p>
             <div class="social-links">
               <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
               <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -83,251 +83,7 @@
           </div>
         </div>
       </section>
-      <!-- Home section End -->
-
-      <!-- About Section -->
-      <section class="about section" id="about">
-        <div class="container">
-          <div class="row">
-            <div class="section-title padd-15">
-              <h2>About Web</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="about-content padd-15">
-              <div class="row">
-                <div class="about-text padd-15">
-                  <h2>AI voice <span>detection</span></h2>
-                  <p>Writing.....</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="personal-info padd-15">
-                  <div class="row">
-                    <div class="info-item padd-15">
-                      <p>Release : <span>1th January ****</span></p>
-                    </div>
-                    <div class="info-item padd-15">
-                      <p>Model : <span>CNN</span></p>
-                    </div>
-                    <div class="info-item padd-15">
-                      <p>Website : <span>****</span></p>
-                    </div>
-                    <div class="info-item padd-15">
-                      <p>Email : <span>*****@gmail.com</span></p>
-                    </div>
-                    <div class="info-item padd-15">
-                      <p>Framework : <span>***</span></p>
-                    </div>
-                    <div class="info-item padd-15">
-                      <p>Phone : <span>******</span></p>
-                    </div>
-                    <div class="info-item padd-15">
-                      <p>Dataset : <span>ASV2019_LA</span></p>
-                    </div>
-                    <div class="info-item padd-15">
-                      {% comment %} <p>Freelance : <span>Available</span></p> {% endcomment %}
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="buttons padd-15">
-                      {% comment %} <a href="pdf/resume.pdf" target="_target" class="btn">Download CV</a>
-                      <a href="https://www.fiverr.com/alsiamworld" target="_blank" data-section-index="0"
-                        class="btn hire-me">Hire Me</a> {% endcomment %}
-                    </div>
-                  </div>
-                </div>
-                <div class="skills padd-15">
-                  <div class="row">
-                    <div class="skill-item padd-15">
-                      <h5>Research paper</h5>
-                      <div class="progress">
-                        <div class="progress-in" style="width: 80%"></div>
-                        <div class="skill-percent">80%</div>
-                      </div>
-                    </div>
-                    <div class="skill-item padd-15">
-                      <h5>Model training</h5>
-                      <div class="progress">
-                        <div class="progress-in" style="width: 20%"></div>
-                        <div class="skill-percent">20%</div>
-                      </div>
-                    </div>
-                    <div class="skill-item padd-15">
-                      <h5>Web Development</h5>
-                      <div class="progress">
-                        <div class="progress-in" style="width: 50%"></div>
-                        <div class="skill-percent">50%</div>
-                      </div>
-                    </div>
-                    <div class="skill-item padd-15">
-                      <h5>Data colection</h5>
-                      <div class="progress">
-                        <div class="progress-in" style="width: 70%"></div>
-                        <div class="skill-percent">70%</div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="education padd-15">
-                  <h3 class="title">Process</h3>
-                  <div class="row">
-                    <div class="timeline-box padd-15">
-                      <div class="timeline shadow-dark">
-                        <!-- Timeline Item -->
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date">
-                            <i class="fa fa-calendar"></i> **** to Present
-                          </h6>
-                          <h4 class="timeline-title">Research</h4>
-                          <p class="timeline-text">.....</p>
-                        </div>
-                        <!-- Timeline Item end -->
-                        <!-- Timeline Item -->
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date">
-                            <i class="fa fa-calendar"></i> **** to Present
-                          </h6>
-                          <h4 class="timeline-title">Choose model, develope website</h4>
-                          <p class="timeline-text">......</p>
-                        </div>
-                        <!-- Timeline Item end -->
-                        <!-- Timeline Item -->
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date">
-                            <i class="fa fa-calendar"></i> **** to ****
-                          </h6>
-                          <h4 class="timeline-title">.....</h4>
-                          <p class="timeline-text">...... </p>
-                        </div>
-                        <!-- Timeline Item end -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="experience padd-15">
-                  <h3 class="title">Role</h3>
-                  <div class="row">
-                    <div class="timeline-box padd-15">
-                      <div class="timeline shadow-dark">
-                        <!-- Timeline Item -->
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date">
-                            <i class="fa fa-calendar"></i> **** to Present
-                          </h6>
-                          <h4 class="timeline-title">TruongNgoc</h4>
-                          <p class="timeline-text">Develope Website, Research</p>
-                        </div>
-                        <!-- Timeline Item end -->
-                        <!-- Timeline Item -->
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date">
-                            <i class="fa fa-calendar"></i> **** to Present
-                          </h6>
-                          <h4 class="timeline-title">NgocManh</h4>
-                          <p class="timeline-text">Research, Summarize, report </p>
-                        </div>
-                        <!-- Timeline Item end -->
-                        <!-- Timeline Item -->
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date">
-                            <i class="fa fa-calendar"></i> **** to Present
-                          </h6>
-                          <h4 class="timeline-title">LeeKayn</h4>
-                          <p class="timeline-text">Research, Model examination </p>
-                        </div>
-                        <!-- Timeline Item end -->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </section>
-      <!-- About Section End -->
-
-      <!-- Service Section  -->
-      <section class="service section" id="services">
-        <div class="container">
-          <div class="row">
-            <div class="section-title padd-15">
-              <h2>Services</h2>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Service Item -->
-            <div class="service-item padd-15">
-              <div class="service-item-inner">
-                <div class="icon"><i class="fa fa-paint-brush"></i></div>
-                <h4></h4>
-                <p></p>
-              </div>
-            </div>
-            <!-- Service Item Ended -->
-            <!-- Service Item -->
-            <div class="service-item padd-15">
-              <div class="service-item-inner">
-                <div class="icon"><i class="fa fa-laptop"></i></div>
-                <h4></h4>
-                <p></p>
-              </div>
-            </div>
-            <!-- Service Item Ended -->
-            <!-- Service Item -->
-            <div class="service-item padd-15">
-              <div class="service-item-inner">
-                <div class="icon"><i class="fa fa-wordpress"></i></div>
-                <h4></h4>
-                <p></p>
-              </div>
-            </div>
-            <!-- Service Item Ended -->
-            <!-- Service Item -->
-            <div class="service-item padd-15">
-              <div class="service-item-inner">
-                <div class="icon"><i class="fa fa-code"></i></div>
-                <h4></h4>
-                <p></p>
-              </div>
-            </div>
-            <!-- Service Item Ended -->
-            <!-- Service Item -->
-            <div class="service-item padd-15">
-              <div class="service-item-inner">
-                <div class="icon"><i class="fa fa-film"></i></div>
-                <h4></h4>
-                <p></p>
-              </div>
-            </div>
-            <!-- Service Item Ended -->
-            <!-- Service Item -->
-            <div class="service-item padd-15">
-              <div class="service-item-inner">
-                <div class="icon"><i class="fa fa-rocket"></i></div>
-                <h4></h4>
-                <p></p>
-              </div>
-            </div>
-            <!-- Service Item Ended -->
-          </div>
-        </div>
-      </section>
-      <!-- Service Section Ended -->
-
-      <!-- Portfolio Section -->
+    
       <section class="portfolio section" id="portfolio">
         <div class="container">
           <div class="row">
@@ -354,34 +110,16 @@
                   <div id="selected-file"  >Không có tệp nào được chọn.</div>
                   <div class="button-play" ><button class="button-43" id="playButton">Play</button>
                    <button class="button-43" id="pauseButton">Pause</button></div>
-                {% comment %} <div class="portfolio-info">
-                  <h4>Web Design</h4>
-                  <div class="icon"><i class="fa fa-search"></i></div>
-                </div> {% endcomment %}
+          
               </div>
             </div>
-            <!-- Portfolio Item End-->
-            <!-- Portfolio Item -->
-            {% comment %} <div class="row">
-            <div class="portfolio-item padd-15" data-category="wordpress">
-              
-              <div class="evalute">
-              <button type="button" class="button-43" id="like-button"> Like </button>
-  
-                <button class="button-43" id="dislike-button">Dislike</button></div>
-            </div>
-          </div> {% endcomment %}
-            <!-- Portfolio Item End-->
-            <!-- Portfolio Item -->
-           
-            <!-- Portfolio Item End-->
-            <!-- Portfolio Item -->
+       
             <div class="row">
             <div class="portfolio-item padd-15" data-category="photography">
-              <label class="lang-but" style="font-size: 18px; color: white; margin-right: 95px; ">
+              <label class="lang-but" style="font-size: 18px; color: blue; margin-right: 95px; ">
                 <input type="radio" name="language" value="vietnamese" id="lang_vi" checked> Vietnamese
             </label>
-            <label class="lang-but" style="font-size: 18px; color: white;">
+            <label class="lang-but" style="font-size: 18px; color: blue;">
                 <input type="radio" name="language" value="english" id="lang_en" > English
             </label>
             <br><br>
@@ -396,21 +134,15 @@
                     
                   </div>
                   <div style="display: flex;">
-                  <button type="button" class="button-43" id="like-button" style="display: none; flex-grow: 1; width: 48%; float: left; margin-right: 2%;"> Like </button>
-                    <button class="button-43" id="dislike-button" style="display: none; flex-grow: 1; width: 48%; float: right;">Dislike</button>
+                  <button type="button" class="button-43" id="like-button" style="display: none; flex-grow: 1; width: 48%; float: left; margin-right: 2%;"> Good </button>
+                    <button class="button-43" id="dislike-button" style="display: none; flex-grow: 1; width: 48%; float: right;">Bad</button>
                   </div>
                 
                   
             </div>
             
           </div>
-            <!-- Portfolio Item End-->
-            <!-- Portfolio Item -->
-           
-            <!-- Portfolio Item End-->
-            <!-- Portfolio Item -->
-            
-            <!-- Portfolio Item End-->
+     
 
           </div>
         </div>
@@ -567,22 +299,7 @@
   </div>
   <!-- Main Container End-->
 
-  {% comment %} <!-- Lightbox  -->
-  <div class="lightbox">
-    <div class="lightbox-content">
-      <div class="lightbox-close">&times;</div>
-      <img src="{%static 'images/portfolio/2.jpg' %}" class="lightbox-img" onclick="nextItem()" alt="">
-      <div class="lightbox-caption">
-        <div class="caption-text"></div>
-        <div class="caption-counter"></div>
-      </div>
-    </div>
-    <div class="lightbox-controls">
-      <div class="prev-item" onclick="prevItem()"><i class="fa fa-angle-left"></i></div>
-      <div class="next-item" onclick="nextItem()"><i class="fa fa-angle-right"></i></div>
-    </div>
-  </div>
-  <!-- Lightbox End --> {% endcomment %}
+
 
   <!-- Live Style Switcher -->
   <div class="style-switcher">

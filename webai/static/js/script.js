@@ -221,6 +221,8 @@ const uploadButton = document.getElementById('upload-button');
 uploadButton.addEventListener('click', function() {
 
     audioUploadInput.click(); // Khi nhấp vào nút, gọi sự kiện click cho input âm thanh
+    document.querySelector('.portfolio-item[data-category="web-design"]').style.display = 'block';
+    document.querySelector('.portfolio-item[data-category="photography"]').style.display = 'block';
 });
 
 // Đoạn mã xử lý khi nút "Phát" được nhấp
@@ -330,7 +332,7 @@ LikeButton.addEventListener('click', function() {
                 const response = JSON.parse(xhr.responseText);
                 if (response.converted) {
 
-                    alert('done!');
+                    // alert('done!');
                 } else {
 
                     alert("Try later");
@@ -384,7 +386,7 @@ LDislikeButton.addEventListener('click', function() {
                 const response = JSON.parse(xhr.responseText);
                 if (response.converted) {
 
-                    alert('done!');
+                    // alert('done!');
                 } else {
 
                     alert("Try later");
@@ -410,6 +412,7 @@ LDislikeButton.addEventListener('click', function() {
 
         langViButton.parentElement.style.display = 'inline-block';
         langEnButton.parentElement.style.display = 'inline-block';
+
         xhr.send(formData);
     }
 });

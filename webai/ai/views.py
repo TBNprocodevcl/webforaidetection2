@@ -1,17 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
-from pydub import AudioSegment
-import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use('Agg')
 import io
-import base64
 from django.views.decorators.csrf import csrf_exempt
 import numpy as np
-import librosa
-import librosa.display
-import shutil
 from django.conf import settings
 import os
 from . import predict
@@ -27,45 +19,8 @@ def say_hello(request):
     return render(request, 'hello.html')
 def trangchu(request):
     return render(request, 'index.html')
-@csrf_exempt
-def get_waveform_image(request):
-    if request.method == 'POST':
-        print("hji")
-        audio_file = request.FILES['audio_file']
-        print('Audio File:', audio_file.name)
-        # Xử lý tệp âm thanh với pydub
-        y, sr = librosa.load(audio_file, sr=None)
 
-        # Tạo Mel spectrogram
-        mel_spectrogram = librosa.feature.melspectrogram(y=y, sr=sr)
 
-        # Chuyển Mel spectrogram thành dB
-        mel_spectrogram_db = librosa.power_to_db(mel_spectrogram, ref=np.max)
-        
-        # Hiển thị Mel spectrogram
-        # plt.figure(figsize=(10, 4)
-        plt.clf()
-        librosa.display.specshow(mel_spectrogram_db, x_axis='time', y_axis='mel')
-        plt.colorbar(format='%+2.0f dB')
-        plt.title('Mel Spectrogram')
-        print("in bieu do")
-        # Chuyển Mel spectrogram thành hình ảnh
-        buf = io.BytesIO()
-        plt.savefig(buf, format='png')
-        image_name = 'mel_spectrogram.png'  # Tên hình ảnh bạn muốn sử dụng
-        image_path = os.path.join(settings.STATICFILES_DIRS[0], 'images', image_name)
-        if os.path.exists(image_path):
-            os.remove(image_path)
-        plt.savefig(image_path, format='png')
-        buf.seek(0)
-
-        # Chuyển hình ảnh thành dạng base64
-        # mel_spectrogram_image = base64.b64encode(buf.read()).decode('utf-8')
-        # print("in bieu do2")
-        converted=True
-        return JsonResponse({'converted': converted})
-
-    return JsonResponse({'error': 'Không thể tạo biểu đồ waveform.'})
 @csrf_exempt
 def get_predict(request):
     if request.method == 'POST':
@@ -88,44 +43,9 @@ def get_predict(request):
             converted=False
         return JsonResponse({'converted': converted})
 
-    return JsonResponse({'error': 'Không thể tạo biểu đồ waveform.'})
+    return JsonResponse({'error': 'Không thể thực hiện.'})
 
 
-def get_waveform_image_hi(audio_file):
-        print("hji3")
-        
-        print('Audio File:', audio_file.name)
-        # Xử lý tệp âm thanh với pydub
-        y, sr = librosa.load(audio_file, sr=None)
-
-        # Tạo Mel spectrogram
-        mel_spectrogram = librosa.feature.melspectrogram(y=y, sr=sr)
-
-        # Chuyển Mel spectrogram thành dB
-        mel_spectrogram_db = librosa.power_to_db(mel_spectrogram, ref=np.max)
-        
-        # Hiển thị Mel spectrogram
-        # plt.figure(figsize=(10, 4)
-        plt.clf()
-        librosa.display.specshow(mel_spectrogram_db, x_axis='time', y_axis='mel')
-        plt.colorbar(format='%+2.0f dB')
-        plt.title('Mel Spectrogram')
-        print("in bieu do")
-        # Chuyển Mel spectrogram thành hình ảnh
-        buf = io.BytesIO()
-        plt.savefig(buf, format='png')
-        image_name = 'mel_spectrogram.png'  # Tên hình ảnh bạn muốn sử dụng
-        image_path = os.path.join(settings.STATICFILES_DIRS[0], 'images', image_name)
-        if os.path.exists(image_path):
-            os.remove(image_path)
-        plt.savefig(image_path, format='png')
-        buf.seek(0)
-
-        # Chuyển hình ảnh thành dạng base64
-        # mel_spectrogram_image = base64.b64encode(buf.read()).decode('utf-8')
-        # print("in bieu do2")
-        converted=True
-    
 @csrf_exempt
 def downaudio(request):
     if request.method == 'POST':
@@ -154,7 +74,7 @@ def downaudio(request):
         converted=True
         return JsonResponse({'converted': converted})
 
-    return JsonResponse({'error': 'Không thể tạo biểu đồ waveform.'})
+    return JsonResponse({'error': 'Không thể thực hiện.'})
 @csrf_exempt
 def get_predict2(request):
     if request.method == 'POST':
