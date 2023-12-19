@@ -605,3 +605,4 @@ def predict(file_name):
         return "bonfide"
     else:
         return "spoof"
+    

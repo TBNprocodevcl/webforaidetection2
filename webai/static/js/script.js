@@ -413,3 +413,202 @@ LDislikeButton.addEventListener('click', function() {
         xhr.send(formData);
     }
 });
+
+// Old Upload image 
+// const selectImage = document.querySelector('.select-image');
+// const inputFile = document.querySelector('#file');
+// const imgArea = document.querySelector('.img-area');
+// const dropArea = document.querySelector('#drop-area')
+// const containerFile = document.querySelector(".container-file") 
+
+
+// selectImage.addEventListener('click', function () {
+// 	inputFile.click();
+// })
+
+// inputFile.addEventListener('change', uploadImage)
+
+// function uploadImage() {
+//     const image = inputFile.files[0]
+// 	if(image.size < 2000000) {
+// 		const reader = new FileReader();
+// 		reader.onload = ()=> {
+// 			const allImg = imgArea.querySelectorAll('img');
+// 			allImg.forEach(item=> item.remove());
+// 			const imgUrl = reader.result;
+// 			const img = document.createElement('img');
+// 			img.src = imgUrl;
+// 			imgArea.appendChild(img);
+// 			imgArea.classList.add('active');
+// 			imgArea.dataset.img = image.name;
+
+    
+// 		}
+// 		reader.readAsDataURL(image);
+// 	} else {
+// 		alert("Image size more than 2MB");
+// 	}
+// }
+
+// dropArea.addEventListener("dragover", function (e) {
+//     e.preventDefault()
+// })
+
+// dropArea.addEventListener("drop", function (e) {
+//     e.preventDefault()
+//     inputFile.files = e.dataTransfer.files 
+//     uploadImage()
+// })
+
+// const showResult = document.querySelector('.show-result')
+// const imageResult = document.querySelector('.image-result')
+
+// showResult.addEventListener('click', function(e) {
+//     e.preventDefault() 
+
+//     // Kiểm tra xem đã có ảnh được tải lên chưa
+//     if (imgArea.classList.contains('active')) {
+//         const imageUrl = imgArea.querySelector('img').src
+
+//         sendImageToServer(imageUrl) 
+//     } else {
+//         alert('Please upload an image first') 
+//     }
+// })
+
+// function sendImageToServer(imageUrl) {
+//     const apiUrl = '/predict_image/' 
+
+//     const formData = new FormData() 
+//     formData.append('image', inputFile.files[0]) 
+//     console.log(formData);
+
+//     // Send POST request 
+//     fetch(apiUrl, {
+//         method: 'POST',
+//         body: formData,
+//     })
+//     .then(response => response.json()) 
+//     .then(data => {
+//         console.log(data); 
+//         // alert("Image sent successfully") 
+//         if ('result_image' in data) {
+//             const imgElement = new Image()
+//             imgElement.src = `data:image/png;base64, ${data.result_image}`
+//             imgElement.alt = 'Result image'
+//             while (imageResult.firstChild) {
+//                 imageResult.removeChild(imageResult.firstChild) 
+//             }
+
+//             imageResult.append(imgElement) 
+
+//         }
+//     })
+//     .catch(error => {
+//         console.log(error); 
+//     })
+// }
+
+const wrapper = document.querySelector(".wrapper");
+const fileName = document.querySelector(".file-name");
+const defaultBtn = document.querySelector("#default-btn");
+const customBtn = document.querySelector("#custom-btn");
+const cancelBtn = document.querySelector("#cancel-btn i");
+const img = document.querySelector(".img");
+
+let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+customBtn.addEventListener('click', function(e) {
+    e.preventDefault() 
+    defaultBtn.click()
+})
+
+defaultBtn.addEventListener("change", uploadImage);
+
+function uploadImage() {
+    const file = defaultBtn.files[0];
+    if(file){
+        const reader = new FileReader();
+        reader.onload = function(){
+        const result = reader.result;
+        img.src = result;
+        wrapper.classList.add("active");
+        }
+        cancelBtn.addEventListener("click", function(){
+            img.src = "";
+            wrapper.classList.remove("active");
+        })
+        reader.readAsDataURL(file);
+    }
+    if(defaultBtn.value){
+        let valueStore = defaultBtn.value.match(regExp);
+        fileName.textContent = valueStore;
+    }
+}
+
+const showResult = document.querySelector('.show-result')
+const imageResult = document.querySelector('.image-result')
+const imageContainer = document.querySelector('.image-result .wrapper .image')
+const label = document.querySelector('.label')
+
+showResult.addEventListener('click', function(e) {
+    e.preventDefault() 
+    if (wrapper.classList.contains('active')) {
+        const imageUrl = img.src
+
+        sendImageToServer(imageUrl)
+    }
+})
+
+function sendImageToServer(imageUrl) {
+    const apiUrl = '/predict_image_gradcam/' 
+    const formData = new FormData() 
+    formData.append('image', defaultBtn.files[0]) 
+    console.log(formData);
+
+    // Send POST request 
+    fetch(apiUrl, {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json()) 
+    .then(data => {
+        console.log(data); 
+        // alert("Image sent successfully") 
+        if ('result_image' in data) {
+            const imgElement = new Image()
+            imgElement.src = `data:image/png;base64, ${data.result_image}`
+            imgElement.alt = 'Result image'
+            while (imageContainer.firstChild) {
+                imageContainer.removeChild(imageContainer.firstChild) 
+            }
+
+            imageContainer.append(imgElement) 
+            const wrapper = document.querySelector('.image-result .wrapper') 
+            wrapper.classList.add('active')
+
+        }
+
+        if ('prediction' in data) {
+            const predictionElement = document.createElement('h3') 
+            predictionElement.textContent = `${data.prediction} with confidence score : ${(parseFloat(data.confidence)*100).toFixed(2)}`
+            while (label.firstChild) {
+                label.removeChild(label.firstChild) 
+            }
+
+            label.append(predictionElement)
+        }
+    })
+    .catch(error => {
+        console.log(error); 
+    })
+}
+
+wrapper.addEventListener('dragover', function(e) {
+    e.preventDefault()
+})
+
+wrapper.addEventListener('drop', function(e) {
+    e.preventDefault()
+    defaultBtn.files = e.dataTransfer.files
+    uploadImage()
+})

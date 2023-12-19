@@ -10,4 +10,6 @@ urlpatterns = [
     path("get_waveform_image/",views.get_predict),
     path("down_audio/",views.downaudio),
     path("get_result/",views.get_predict2),
+    path("predict_image/",views.predict_image),
+    path("predict_image_gradcam/",views.predict_image_gradcam)
 ]

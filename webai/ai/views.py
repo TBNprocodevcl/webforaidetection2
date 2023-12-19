@@ -16,6 +16,8 @@ from django.conf import settings
 import os
 from . import predict
 from . import predict2
+from .predict_image import convert_and_classify
+from .predict_image_gradcam import grad_cam_predict
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 
@@ -178,3 +180,40 @@ def get_predict2(request):
         return JsonResponse({'converted': converted})
 
     return JsonResponse({'error': 'Không thể tạo biểu đồ waveform.'})
+
+@csrf_exempt
+def predict_image(request): 
+    if request.method == 'POST' : 
+        print(request.FILES)
+        # Check if image is sent
+        if 'image' in request.FILES : 
+            uploaded_image = request.FILES['image'] 
+            
+            print(uploaded_image)
+            prediction, result_image = convert_and_classify(uploaded_image, 150)
+
+            return JsonResponse({'prediction' : prediction, 'result_image' : result_image})
+        else : 
+            return JsonResponse({'error': 'No image file received'}, status=400) 
+    else :
+        return JsonResponse({'error': 'Invalid request method'},status=400) 
+    
+@csrf_exempt
+def predict_image_gradcam(request): 
+    if request.method == 'POST' : 
+        print(request.FILES)
+        # Check if image is sent
+        if 'image' in request.FILES : 
+            uploaded_image = request.FILES['image'] 
+            
+            print(uploaded_image)
+            prediction, confidence, result_image = grad_cam_predict(uploaded_image)
+            # confidence = float("{:.4f}".format(confidence))
+            confidence = float(confidence)
+            print(confidence)
+
+            return JsonResponse({'prediction' : prediction, 'confidence': confidence ,'result_image' : result_image})
+        else : 
+            return JsonResponse({'error': 'No image file received'}, status=400) 
+    else :
+        return JsonResponse({'error': 'Invalid request method'},status=400) 
